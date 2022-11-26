@@ -10,3 +10,7 @@ def bytes_to_bitarray(number: int, n_bits: int):
     padded_bits = '0'*(n_bits-len(bits)) + bits
     bits_array = [1 if bit == '1' else 0 for bit in padded_bits]
     return bits_array
+
+
+def normalize_number(number: int, n_bits: int, min: float, max: float) -> float:
+    return min + number*(max-min)/(2**n_bits - 1)
